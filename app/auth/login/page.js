@@ -1,9 +1,10 @@
 import { FcGoogle } from "react-icons/fc";
 import { TextField } from "@mui/material";
-import { signIn } from "@/auth";
+import { auth, signIn } from "@/auth";
+import Google from "next-auth/providers/google";
 
 export default  async function Login () {
-    const session = await auth();
+    const session = await auth(Google);
     console.log(session)
     return (
             <main className="min-h-screen flex justify-center px-2  md:px-12 lg:px-16 py-4 md:py-6 lg:py-12">
