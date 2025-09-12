@@ -22,11 +22,11 @@ export default async function Profile () {
                 <p className="text-center py-3 border-b border-gray-600">{session?.user?.name}</p>
                 <p className="text-center py-3 border-b border-gray-600">{session?.user?.email}</p>
                 <p className="text-center py-3 border-b border-gray-600">User Id :{session?.user?.id}</p>
-                <form>
+                <form
                 action={async()=>{
                     "use server"
                     await signOut();
-                }}
+                }}>
                     <Button className="w-full" variant="contained" type="submit" color="error">Log-Out</Button>
                 </form>
             </div>

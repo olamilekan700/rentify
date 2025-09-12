@@ -1,13 +1,13 @@
-const { AuthorizationCheck } = require("@/config/authorization-check");
-const { auth } = require("firebase-admin");
-const { default: RentList } = require("./rent-list");
+import { auth } from "@/auth";
+import { AuthorizationCheck } from "@/config/authorization-check";
+import RentList from "./rent-list";
 
 export default async function Page() {
     const session = await auth();
     return(
          <>
          <AuthorizationCheck/>
-        <RentList userId={session?.user?.id}/>
+         <RentList userId={session?.user?.id}/>
         </>
     )
 }
